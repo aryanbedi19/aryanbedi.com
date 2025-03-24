@@ -5,42 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aryan Bedi</title>
     <style>
-      body {
-        font-family: "Times New Roman", serif;
-        max-width: 700px;
-        margin: 60px auto;
-        padding: 0 20px;
-        line-height: 1.8;
-        color: #222;
-        background-color: #fff;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      h1, h2 {
+      body {
+        font-family: "Times New Roman", serif;
+        display: flex;
+        background-color: #fff;
+        color: #222;
+      }
+
+      .sidebar {
+        width: 220px;
+        background-color: #cce7ff;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+      }
+
+      .sidebar h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+      }
+
+      .sidebar img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 30px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links a {
+        color: #000;
+        text-decoration: none;
+        font-size: 1em;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.7;
+      }
+
+      .sidebar .contact {
+        font-size: 0.9em;
+        margin-top: 40px;
+        border-top: 1px solid #aaa;
+        padding-top: 20px;
+      }
+
+      .sidebar .contact a {
+        color: #000;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .main {
+        margin-left: 240px;
+        padding: 60px 40px;
+        max-width: 700px;
+        line-height: 1.8;
+      }
+
+      .main h1, .main h2 {
         font-size: 1.75em;
         font-weight: normal;
         margin-bottom: 0.5em;
         margin-top: 2em;
       }
 
-      p {
+      .main p {
         margin-bottom: 1.5em;
       }
 
-      ul {
-        padding-left: 20px;
-        margin-bottom: 2em;
-      }
-
-      li {
-        margin-bottom: 0.8em;
-      }
-
-      a {
+      .main a {
         color: #000;
         text-decoration: underline;
       }
 
-      a:hover {
+      .main a:hover {
         opacity: 0.7;
       }
 
@@ -49,47 +106,51 @@
         font-size: 0.9em;
         margin-top: 30px;
       }
-
-      .contact {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #ddd;
-      }
     </style>
   </head>
   <body>
-    <h1>About</h1>
-    <p>Hi! I'm Aryan.</p>
+    <div class="sidebar">
+      <div>
+        <h1>Aryan Bedi</h1>
+        <img src="https://via.placeholder.com/100" alt="Profile Picture" />
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <!-- Add more pages later -->
+        </nav>
+      </div>
+      <div class="contact">
+        <a href="mailto:aryankbedi@gmail.com">aryankbedi@gmail.com</a>
+        <a href="https://x.com/aryan_bedi_" target="_blank">X (Twitter)</a>
+        <a href="https://www.linkedin.com/in/aryan-bedi/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
 
-    <p>
-      I’m a 19-year-old from Toronto who’s really into real estate, tech, and building useful things that help people in industries that haven’t changed much in a while.
-    </p>
+    <div class="main">
+      <h1>About</h1>
+      <p>Hi! I'm Aryan.</p>
 
-    <p>
-      Right now, I’m figuring things out — I don’t fully know what I want to do yet, and I’m okay with that. I just know I love learning, building cool stuff, and trying ideas even if they don’t work out. I study Computer Science at Western University, but this summer, I’m skipping the typical internship path to work on my own ideas instead.
-    </p>
-    <h1>Currently</h1>
-    <p>
-      I'm currently working on <a href="https://www.blancai.ca" target="_blank"><strong>BlancAI</strong></a>, where we're using AI to automate quoting and bidding for enterprise construction teams. We're also Ripple Fellows under <a href="https://www.fellowship.rippleventures.com/founderfellowship" target="_blank"><strong>Ripple Ventures</strong></a>, and part of the youngest group to ever go through the Western Accelerator at Ivey School of Business.
-    </p>
-    
-    <p>
-      This summer, I want to build something that matters — ideally in real estate tech. I'm forcing myself to show up at a WeWork in downtown Toronto every day so I can be around bright people who are taking unconventional paths and figuring it out as they go.
-    </p>
-    
-    <p>
-      On the personal side, I'm making more of an effort to be health-conscious, spend time with friends and family, and push myself out of my comfort zone — including (hopefully) a solo trip this summer.
-    </p>
-    
-    <p class="date">(Updated Mar 23 2025)</p>
-
-    <div class="contact">
-      <h2>Hit me up</h2>
       <p>
-        → <a href="https://x.com/aryan_bedi_" target="_blank">X (Twitter)</a><br />
-        → <a href="https://www.linkedin.com/in/aryan-bedi/" target="_blank">LinkedIn</a><br />
-        → <a href="mailto:aryankbedi@gmail.com">aryankbedi@gmail.com</a>
+        I’m a 19-year-old from Toronto who’s really into real estate, tech, and building useful things that help people in industries that haven’t changed much in a while.
       </p>
+
+      <p>
+        Right now, I’m figuring things out — I don’t fully know what I want to do yet, and I’m okay with that. I just know I love learning, building cool stuff, and trying ideas even if they don’t work out. I study Computer Science at Western University, but this summer, I’m skipping the typical internship path to work on my own ideas instead.
+      </p>
+
+      <h2>Currently</h2>
+      <p>
+        I'm currently working on <a href="https://www.blancai.ca" target="_blank"><strong>BlancAI</strong></a>, where we're using AI to automate quoting and bidding for enterprise construction teams. We're also Ripple Fellows under <a href="https://www.fellowship.rippleventures.com/founderfellowship" target="_blank"><strong>Ripple Ventures</strong></a>, and part of the youngest group to ever go through the Western Accelerator at Ivey School of Business.
+      </p>
+
+      <p>
+        This summer, I want to build something that matters — ideally in real estate tech. I'm forcing myself to show up at a WeWork in downtown Toronto every day so I can be around bright people who are taking unconventional paths and figuring it out as they go.
+      </p>
+
+      <p>
+        On the personal side, I'm making more of an effort to be health-conscious, spend time with friends and family, and push myself out of my comfort zone — including (hopefully) a solo trip this summer.
+      </p>
+
+      <p class="date">(Updated Mar 23 2025)</p>
     </div>
   </body>
 </html>
