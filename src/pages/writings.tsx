@@ -1,7 +1,16 @@
 import { Box, Heading, Text, SimpleGrid, LinkBox, LinkOverlay, HStack, Image, useColorMode } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-const articles = [
+interface Article {
+  title: string;
+  date: string;
+  readTime: string;
+  summary: string;
+  image: string;
+  link: string;
+}
+
+const articles: Article[] = [
   /*{
     title: "My SYDE 1A Experience",
     date: "March 12, 2025",
