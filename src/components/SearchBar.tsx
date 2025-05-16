@@ -1,20 +1,36 @@
 import { Input, InputGroup, InputRightElement, Button, Box, useColorMode } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import type { SearchItem } from "../searchData";
+import searchData from "../searchData"; // Will create this file
 
 const SearchBar = () => {
   const router = useRouter();
   const { colorMode } = useColorMode();
   const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState<SearchItem[]>([]);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  // Live search as user types
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    const value = e.target.value;
+    if (value.trim() === "") {
+      setResults([]);
+      return;
+    }
+    const filtered = searchData.filter((item: SearchItem) =>
+      item.title.toLowerCase().includes(value.toLowerCase()) ||
+      item.description.toLowerCase().includes(value.toLowerCase())
+    );
+    setResults(filtered);
+  };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchTerm.toLowerCase() === "projects") {
-      router.push("/work");
-    } else if (searchTerm.toLowerCase() === "blogs") {
-      router.push("/blogs");
+    if (results.length > 0) {
+      router.push(results[0].link);
     }
-    // Add more search terms and routes as needed
   };
 
   return (
@@ -23,7 +39,7 @@ const SearchBar = () => {
         <Input
           placeholder="Search for my other projects/blogs"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleInputChange}
           borderRadius={0}
           borderWidth="1px"
           borderColor="#E2E8F0"
@@ -59,6 +75,33 @@ const SearchBar = () => {
           </Button>
         </InputRightElement>
       </InputGroup>
+      {/* Render search results here */}
+      <Box mt={2}>
+        {results.map((item, idx) => (
+          <Box
+            key={idx}
+            p={2}
+            bg={
+              hoveredIdx === idx
+                ? (colorMode === "light" ? "purple.100" : "purple.700")
+                : (colorMode === "light" ? "gray.100" : "gray.700")
+            }
+            borderRadius="md"
+            mb={2}
+            cursor="pointer"
+            onClick={() => router.push(item.link)}
+            onMouseEnter={() => setHoveredIdx(idx)}
+            onMouseLeave={() => setHoveredIdx(null)}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") router.push(item.link);
+            }}
+          >
+            <strong>{item.title}</strong>
+            <Box fontSize="sm" color="gray.500">{item.description}</Box>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
