@@ -52,6 +52,7 @@ const ProfileSection = () => {
         justify="center"
         flex={{ base: "none", md: 2 }}
         mb={{ base: 4, md: 0 }}
+        mt={8}
       >
         <div
           style={{
