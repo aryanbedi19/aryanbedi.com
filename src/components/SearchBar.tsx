@@ -34,7 +34,7 @@ const SearchBar = () => {
   };
 
   return (
-    <Box as="form" onSubmit={handleSearch} w={{ base: "100%", md: "400px" }} maxW="100%">
+    <Box as="form" onSubmit={handleSearch} w={{ base: "100%", md: "400px" }} maxW="100%" position="relative">
       <InputGroup size="md" boxShadow="0 2px 8px rgba(0,0,0,0.06)" bg="#F7FAFC" borderRadius={0}>
         <Input
           placeholder="Search for my other projects/blogs"
@@ -48,6 +48,7 @@ const SearchBar = () => {
           height="44px"
           pr="4.5rem"
           color={colorMode === "light" ? "black" : "white"}
+          _dark={{ color: "white", bg: "gray.900" }}
           _placeholder={{ color: "gray.400", opacity: 1, fontSize: "xs" }}
           _hover={{ borderColor: "#B794F4", boxShadow: "0 4px 16px rgba(159,122,234,0.08)" }}
           _focus={{ borderColor: "#6B46C1", boxShadow: "0 0 0 2px #B794F4" }}
@@ -75,33 +76,45 @@ const SearchBar = () => {
           </Button>
         </InputRightElement>
       </InputGroup>
-      {/* Render search results here */}
-      <Box mt={2}>
-        {results.map((item, idx) => (
-          <Box
-            key={idx}
-            p={2}
-            bg={
-              hoveredIdx === idx
-                ? (colorMode === "light" ? "purple.100" : "purple.700")
-                : (colorMode === "light" ? "gray.100" : "gray.700")
-            }
-            borderRadius="md"
-            mb={2}
-            cursor="pointer"
-            onClick={() => router.push(item.link)}
-            onMouseEnter={() => setHoveredIdx(idx)}
-            onMouseLeave={() => setHoveredIdx(null)}
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") router.push(item.link);
-            }}
-          >
-            <strong>{item.title}</strong>
-            <Box fontSize="sm" color="gray.500">{item.description}</Box>
-          </Box>
-        ))}
-      </Box>
+      {/* Render search results as a dropdown */}
+      {results.length > 0 && (
+        <Box
+          mt={2}
+          maxH="300px"
+          overflowY="auto"
+          borderRadius="md"
+          boxShadow="md"
+          bg={colorMode === "light" ? "white" : "gray.800"}
+          zIndex={10}
+          position="absolute"
+          width="100%"
+        >
+          {results.map((item, idx) => (
+            <Box
+              key={idx}
+              p={2}
+              bg={
+                hoveredIdx === idx
+                  ? (colorMode === "light" ? "purple.100" : "purple.700")
+                  : (colorMode === "light" ? "gray.100" : "gray.700")
+              }
+              borderRadius="md"
+              mb={2}
+              cursor="pointer"
+              onClick={() => router.push(item.link)}
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") router.push(item.link);
+              }}
+            >
+              <strong>{item.title}</strong>
+              <Box fontSize="sm" color="gray.500">{item.description}</Box>
+            </Box>
+          ))}
+        </Box>
+      )}
     </Box>
   );
 };
