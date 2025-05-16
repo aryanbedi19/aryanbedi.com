@@ -52,7 +52,7 @@ const ProfileSection = () => {
         justify="center"
         flex={{ base: "none", md: 2 }}
         mb={{ base: 4, md: 0 }}
-        mt={8}
+        mt={{ base: 6, md: 6, lg: 6 }} // Responsive top margin for image gap
       >
         <div
           style={{
@@ -69,8 +69,8 @@ const ProfileSection = () => {
           className="profile-image"
         >
           <Box
-            width="200px"
-            height="200px"
+            width={{ base: "140px", md: "200px" }}
+            height={{ base: "140px", md: "200px" }}
             borderRadius="50%"
             boxShadow="lg"
             overflow="hidden"

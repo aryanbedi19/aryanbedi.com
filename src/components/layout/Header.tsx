@@ -76,113 +76,113 @@ const Header = () => {
       position="sticky"
       top={0}
       zIndex="sticky"
+      w="100%"
       {...headerStyles}
     >
-      <Box maxW="1200px" mx="auto" px={4}>
-        <Flex
-          as="header"
-          align="center"
-          p={4}
-          bg={headerStyles.bg}
-          boxShadow="md"
-          borderRadius="10px"
-        >
-          <Flex direction="row" alignItems="center">
-            {/* Your logo or brand */}
-            <Link
-              as={NextLink}
-              href="/"
-              fontSize={{ base: "lg", md: "xl" }} // Define font sizes for different screen sizes
-              fontWeight="bold"
-              _hover={{
-                textDecoration: "none",
-              }}
-            >
-              Aryan Bedi
-            </Link>
+      <Flex
+        as="header"
+        align="center"
+        p={4}
+        bg={headerStyles.bg}
+        boxShadow="md"
+        borderRadius="10px"
+        w="100%"
+      >
+        <Flex direction="row" alignItems="center">
+          {/* Your logo or brand */}
+          <Link
+            as={NextLink}
+            href="/"
+            fontSize={{ base: "lg", md: "xl" }} // Define font sizes for different screen sizes
+            fontWeight="bold"
+            _hover={{
+              textDecoration: "none",
+            }}
+          >
+            Aryan Bedi
+          </Link>
+        </Flex>
+        <Spacer />
+        {/* Desktop Nav Links */}
+        <Box display={{ base: "none", md: "block" }}>
+          <Flex alignItems="center" gap={6}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                as={NextLink}
+                href={link.href}
+                fontWeight="bold"
+                _hover={{ color: "#9F7AEA", transform: "translateY(-2px)" }}
+                display="flex"
+                alignItems="center"
+              >
+                {link.label}
+              </Link>
+            ))}
           </Flex>
-          <Spacer />
-          {/* Desktop Nav Links */}
-          <Box display={{ base: "none", md: "block" }}>
-            <Flex alignItems="center" gap={6}>
+        </Box>
+        {/* Mobile Hamburger */}
+        <Box display={{ base: "block", md: "none" }}>
+          <IconButton
+            aria-label="Open menu"
+            icon={<FiMenu />}
+            variant="ghost"
+            onClick={onOpen}
+            fontSize="2xl"
+            ml={2}
+          />
+        </Box>
+        <Box ml={4}>
+          {/* Toggle dark mode */}
+          <IconButton
+            aria-label="Toggle Dark Mode"
+            icon={
+              colorMode === "light" ? (
+                <FiMoon color="#6B46C1" fill="#6B46C1" />
+              ) : (
+                <FiSun color="#6B46C1" fill="#6B46C1" />
+              )
+            }
+            onClick={handleToggleColorMode}
+          />
+        </Box>
+      </Flex>
+      {/* Mobile Drawer */}
+      <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="xs">
+        <DrawerOverlay />
+        <DrawerContent bg={colorMode === "light" ? "white" : "#23232a"} boxShadow="2xl">
+          <DrawerBody p={0} display="flex" flexDirection="column" h="100%">
+            <Flex align="center" justify="space-between" p={6} borderBottom="1px solid" borderColor={colorMode === "light" ? "gray.200" : "gray.700"}>
+              <Heading as="h3" size="md" color={colorMode === "light" ? "#6B46C1" : "#A78BFA"} letterSpacing="wide">
+                Aryan Bedi
+              </Heading>
+              <IconButton
+                aria-label="Close menu"
+                icon={<FiX />}
+                variant="ghost"
+                onClick={onClose}
+                fontSize="2xl"
+              />
+            </Flex>
+            <VStack spacing={8} align="flex-start" justify="center" flex="1" px={8} py={10}>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   as={NextLink}
                   href={link.href}
                   fontWeight="bold"
-                  _hover={{ color: "#9F7AEA", transform: "translateY(-2px)" }}
-                  display="flex"
-                  alignItems="center"
+                  fontSize="2xl"
+                  color={colorMode === "light" ? "#2D3748" : "white"}
+                  _hover={{ color: "#9F7AEA", textDecoration: "underline" }}
+                  onClick={onClose}
                 >
                   {link.label}
                 </Link>
               ))}
-            </Flex>
-          </Box>
-          {/* Mobile Hamburger */}
-          <Box display={{ base: "block", md: "none" }}>
-            <IconButton
-              aria-label="Open menu"
-              icon={<FiMenu />}
-              variant="ghost"
-              onClick={onOpen}
-              fontSize="2xl"
-              ml={2}
-            />
-          </Box>
-          <Box ml={4}>
-            {/* Toggle dark mode */}
-            <IconButton
-              aria-label="Toggle Dark Mode"
-              icon={
-                colorMode === "light" ? (
-                  <FiMoon color="#6B46C1" fill="#6B46C1" />
-                ) : (
-                  <FiSun color="#6B46C1" fill="#6B46C1" />
-                )
-              }
-              onClick={handleToggleColorMode}
-            />
-          </Box>
-        </Flex>
-        {/* Mobile Drawer */}
-        <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="xs">
-          <DrawerOverlay />
-          <DrawerContent bg={colorMode === "light" ? "white" : "#23232a"} boxShadow="2xl">
-            <DrawerBody p={0} display="flex" flexDirection="column" h="100%">
-              <Flex align="center" justify="space-between" p={6} borderBottom="1px solid" borderColor={colorMode === "light" ? "gray.200" : "gray.700"}>
-                <Heading as="h3" size="md" color={colorMode === "light" ? "#6B46C1" : "#A78BFA"} letterSpacing="wide">
-                  Aryan Bedi
-                </Heading>
-                <IconButton
-                  aria-label="Close menu"
-                  icon={<FiX />}
-                  variant="ghost"
-                  onClick={onClose}
-                  fontSize="2xl"
-                />
-              </Flex>
-              <VStack spacing={8} align="flex-start" justify="center" flex="1" px={8} py={10}>
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    as={NextLink}
-                    href={link.href}
-                    fontWeight="bold"
-                    fontSize="2xl"
-                    color={colorMode === "light" ? "#2D3748" : "white"}
-                    _hover={{ color: "#9F7AEA", textDecoration: "underline" }}
-                    onClick={onClose}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </VStack>
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
-      </Box>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   );
 };

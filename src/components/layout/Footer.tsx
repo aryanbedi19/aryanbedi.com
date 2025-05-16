@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <>
-      <Box maxW="1200px" mx="auto" px={4}>
+      <Box w="100%" px={4}>
         <div className="footer-container">
           <div className="left-content">
             <p
@@ -81,7 +81,7 @@ const Footer = () => {
           justify-content: space-between;
           align-items: center;
           padding: 20px;
-          border-top: 1px solid #eaeaea;
+          /* border-top: 1px solid #eaeaea; */
 
           @media (max-width: 600px) {
             flex-direction: column;
