@@ -18,6 +18,12 @@ const sections = [
         desc: "Select Group at UWO funded $12,000 to build a startup in 4 months",
       },
       {
+        title: "Industry Analyst",
+        org: "Western Real Estate Club",
+        date: "Sept 2024 – Present",
+        desc: "Analyze residential real estate trends and provide market insights to support club events and reports.",
+      },
+      {
         title: "Marketing",
         org: "BitSwap",
         date: "March 2021 - Aug 2021",

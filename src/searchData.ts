@@ -33,6 +33,12 @@ const searchData: SearchItem[] = [
     type: 'work',
   },
   {
+    title: 'Industry Analyst at Western Real Estate Club',
+    description: 'Analyze residential real estate trends and provide market insights to support club events and reports.',
+    link: '/work',
+    type: 'work',
+  },
+  {
     title: 'Marketing at BitSwap',
     description: 'Led a digital marketing campaign that grew the site from 0 to 10,000 monthly users.',
     link: '/work',
