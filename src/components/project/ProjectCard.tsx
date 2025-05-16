@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         minWidth={0}
         borderRadius="lg"
         overflow="hidden"
-        p={{ base: 2, sm: 4, md: 6 }}
+        p={{ base: 2, sm: 3, md: 4 }}
         m={{ base: 0, sm: 0, md: 0 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -74,12 +74,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             fontWeight="bold"
             zIndex="1"
             whiteSpace="nowrap"
+            display="inline-flex"
+            alignItems="center"
           >
             {tag}
+            <Box as="span" ml={1} fontSize="xs" color={textColor}>
+              <FaExternalLinkAlt />
+            </Box>
           </Text>
-          <Box fontSize="xs" color={textColor} zIndex="2">
-            <FaExternalLinkAlt />
-          </Box>
         </Box>
         <CardBody>
           <Heading as="h4" size={{ base: "sm", sm: "md" }} mb={2}>

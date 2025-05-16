@@ -24,9 +24,9 @@ const Projects = () => {
       <Text fontSize="sm" color="gray.500" mt={-2} mb="2px">
         some things ive done over the years.
       </Text>
-      <Flex direction="column" mt={10} w="100%" px={2}>
+      <Flex direction={{ base: "column", md: "row" }} mt={10} w="100%" px={2}>
         {/* Featured Cards */}
-        <Box mb={6} w="100%" maxW="350px" mx="auto">
+        <Box flex="1" mb={{ base: 6, md: 0 }} mr={{ base: 0, md: 6 }} w="100%">
           <ProjectCard
             title="Blanc AI"
             description="Quoting/Bidding Automation for Construction Enterprises."
@@ -34,7 +34,7 @@ const Projects = () => {
             tag="Active"
           />
         </Box>
-        <Box mb={6} w="100%" maxW="350px" mx="auto">
+        <Box flex="1" mb={6} w="100%">
           <ProjectCard
             title="Entrepreneur Profile"
             description="Article on what drives me to be an entrepreneur."
