@@ -53,9 +53,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       <Card
         className="project-card"
-        width="100%"
+        width={{ base: "100%", sm: "100%", md: "100%" }}
+        minWidth={0}
         borderRadius="lg"
         overflow="hidden"
+        p={{ base: 2, sm: 4, md: 6 }}
+        m={{ base: 0, sm: 0, md: 0 }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -91,10 +94,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </Text>
         </Box>
         <CardBody>
-          <Heading as="h4" size="md" mb={2}>
+          <Heading as="h4" size={{ base: "sm", sm: "md" }} mb={2}>
             {title}
           </Heading>
-          <Text fontSize="sm" color={descriptionTextColor} mb={1}>
+          <Text fontSize={{ base: "xs", sm: "sm" }} color={descriptionTextColor} mb={1}>
             {description}
           </Text>
         </CardBody>
