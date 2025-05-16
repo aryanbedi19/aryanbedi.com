@@ -27,7 +27,7 @@ const Projects = () => {
       <Flex direction="column" mt={10} w="100%">
         {/* First Row */}
         <Flex direction={{ base: "column", md: "row" }} mb={1} w="100%">
-          <Box flex="1" mb={6} mr={{ base: 0, md: 6 }} w="100%">
+          <Box flex="1" mb={6} mr={{ base: 0, md: 6 }} w="100%" maxW="350px" mx="auto">
             <ProjectCard
               title="Blanc AI"
               description="Quoting/Bidding Automation for Construction Enterprises."
@@ -35,7 +35,7 @@ const Projects = () => {
               tag="Active"
             />
           </Box>
-          <Box flex="1" mb={6} w="100%">
+          <Box flex="1" mb={{ base: 6, md: 0 }} w="100%" maxW="350px" mx="auto">
             <ProjectCard
               title="Entrepreneur Profile"
               description="Article on what drives me to be an entrepreneur."

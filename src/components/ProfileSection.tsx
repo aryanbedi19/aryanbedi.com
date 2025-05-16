@@ -52,29 +52,24 @@ const ProfileSection = () => {
         justify="center"
         flex={{ base: "none", md: 2 }}
         mb={{ base: 4, md: 0 }}
-        mt={{ base: 4, sm: 6, md: 6, lg: 6 }} // More responsive top margin
+        mt={{ base: 4, sm: 6, md: 6, lg: 6 }}
+        w="100%"
       >
-        <div
-          style={{
-            width: "100%",
-            maxWidth: "200px",
-            boxShadow: "lg",
-            overflow: "hidden",
-            position: "relative",
-            transform: isHovered ? "translateY(-5px)" : "none",
-            transition: "transform 0.3s ease",
-          }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          className="profile-image"
+        <Box
+          display="flex"
+          justifyContent="center"
+          w="100%"
         >
           <Box
-            width={{ base: "100px", sm: "140px", md: "200px" }}
-            height={{ base: "100px", sm: "140px", md: "200px" }}
+            width={{ base: "120px", sm: "140px", md: "200px" }}
+            height={{ base: "120px", sm: "140px", md: "200px" }}
+            maxWidth={{ base: "120px", sm: "140px", md: "200px" }}
+            maxHeight={{ base: "120px", sm: "140px", md: "200px" }}
             borderRadius="50%"
             boxShadow="lg"
             overflow="hidden"
             position="relative"
+            mx="auto"
             className="profile-image"
           >
             <Image
@@ -84,7 +79,7 @@ const ProfileSection = () => {
               objectFit="cover"
             />
           </Box>
-        </div>
+        </Box>
         <Box
           mt={4}
           display="flex"
