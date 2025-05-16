@@ -24,26 +24,24 @@ const Projects = () => {
       <Text fontSize="sm" color="gray.500" mt={-2} mb="2px">
         some things ive done over the years.
       </Text>
-      <Flex direction="column" mt={10} w="100%">
-        {/* First Row */}
-        <Flex direction={{ base: "column", md: "row" }} mb={1} w="100%">
-          <Box flex="1" mb={6} mr={{ base: 0, md: 6 }} w="100%" maxW="350px" mx="auto">
-            <ProjectCard
-              title="Blanc AI"
-              description="Quoting/Bidding Automation for Construction Enterprises."
-              demoUrl="https://blancai.ca"
-              tag="Active"
-            />
-          </Box>
-          <Box flex="1" mb={{ base: 6, md: 0 }} w="100%" maxW="350px" mx="auto">
-            <ProjectCard
-              title="Entrepreneur Profile"
-              description="Article on what drives me to be an entrepreneur."
-              demoUrl="https://entrepreneurship.uwo.ca/news/2025/04/Accelerator-Profile-Aryan-Bedi-of-Blanc-AI/"
-              tag="Featured"
-            />
-          </Box>
-        </Flex>
+      <Flex direction="column" mt={10} w="100%" px={2}>
+        {/* Featured Cards */}
+        <Box mb={6} w="100%" maxW="350px" mx="auto">
+          <ProjectCard
+            title="Blanc AI"
+            description="Quoting/Bidding Automation for Construction Enterprises."
+            demoUrl="https://blancai.ca"
+            tag="Active"
+          />
+        </Box>
+        <Box mb={6} w="100%" maxW="350px" mx="auto">
+          <ProjectCard
+            title="Entrepreneur Profile"
+            description="Article on what drives me to be an entrepreneur."
+            demoUrl="https://entrepreneurship.uwo.ca/news/2025/04/Accelerator-Profile-Aryan-Bedi-of-Blanc-AI/"
+            tag="Featured"
+          />
+        </Box>
       </Flex>
       <Flex justify="flex-end" mb={8}>
         <Link color="gray.500" href="https://github.com/aryanbedi19">

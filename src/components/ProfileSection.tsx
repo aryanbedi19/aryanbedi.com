@@ -54,22 +54,25 @@ const ProfileSection = () => {
         mb={{ base: 4, md: 0 }}
         mt={{ base: 4, sm: 6, md: 6, lg: 6 }}
         w="100%"
+        px={2}
       >
         <Box
+          width={{ base: "100%", sm: "100%", md: "auto" }}
           display="flex"
+          alignItems="center"
           justifyContent="center"
-          w="100%"
         >
           <Box
-            width={{ base: "120px", sm: "140px", md: "200px" }}
-            height={{ base: "120px", sm: "140px", md: "200px" }}
-            maxWidth={{ base: "120px", sm: "140px", md: "200px" }}
-            maxHeight={{ base: "120px", sm: "140px", md: "200px" }}
+            width={{ base: "110px", sm: "130px", md: "180px" }}
+            height={{ base: "110px", sm: "130px", md: "180px" }}
+            maxWidth={{ base: "110px", sm: "130px", md: "180px" }}
+            maxHeight={{ base: "110px", sm: "130px", md: "180px" }}
             borderRadius="50%"
             boxShadow="lg"
             overflow="hidden"
             position="relative"
             mx="auto"
+            display="block"
             className="profile-image"
           >
             <Image

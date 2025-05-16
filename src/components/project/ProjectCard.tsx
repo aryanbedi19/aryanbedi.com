@@ -62,36 +62,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Box position="relative">
-          {/* External Link Icon */}
-          <Box
-            position="absolute"
-            top="21.5"
-            right="2"
-            fontSize="xs"
-            color={textColor}
-            zIndex="2"
-            mr={2}
-          >
-            <FaExternalLinkAlt />
-          </Box>
-          {/* Tag on top corner */}
+        {/* Tag and Icon Row */}
+        <Box display="flex" justifyContent="flex-end" alignItems="center" mb={2} gap={2}>
           <Text
-            position="absolute"
-            top="4"
-            right="2"
-            fontSize="xs"
+            fontSize={{ base: "xs", sm: "sm" }}
             color={textColor}
             bg={backgroundGradient}
             borderRadius="md"
             px={2}
-            pr={7}
             py={1}
             fontWeight="bold"
             zIndex="1"
+            whiteSpace="nowrap"
           >
             {tag}
           </Text>
+          <Box fontSize="xs" color={textColor} zIndex="2">
+            <FaExternalLinkAlt />
+          </Box>
         </Box>
         <CardBody>
           <Heading as="h4" size={{ base: "sm", sm: "md" }} mb={2}>
