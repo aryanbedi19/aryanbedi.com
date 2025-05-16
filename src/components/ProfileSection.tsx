@@ -52,25 +52,25 @@ const ProfileSection = () => {
         justify="center"
         flex={{ base: "none", md: 2 }}
         mb={{ base: 4, md: 0 }}
-        mt={{ base: 6, md: 6, lg: 6 }} // Responsive top margin for image gap
+        mt={{ base: 4, sm: 6, md: 6, lg: 6 }} // More responsive top margin
       >
         <div
           style={{
-            width: "200px",
-            height: "200px",
+            width: "100%",
+            maxWidth: "200px",
             boxShadow: "lg",
             overflow: "hidden",
             position: "relative",
-            transform: isHovered ? "translateY(-5px)" : "none", // Apply the same transform effect
-            transition: "transform 0.3s ease", // Apply the same transition duration and easing
+            transform: isHovered ? "translateY(-5px)" : "none",
+            transition: "transform 0.3s ease",
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           className="profile-image"
         >
           <Box
-            width={{ base: "140px", md: "200px" }}
-            height={{ base: "140px", md: "200px" }}
+            width={{ base: "100px", sm: "140px", md: "200px" }}
+            height={{ base: "100px", sm: "140px", md: "200px" }}
             borderRadius="50%"
             boxShadow="lg"
             overflow="hidden"
