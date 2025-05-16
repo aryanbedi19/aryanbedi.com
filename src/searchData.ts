@@ -72,18 +72,6 @@ const searchData: SearchItem[] = [
     type: 'work',
   },
   // About Section
-  {
-    title: 'About Aryan Bedi',
-    description: 'Learn more about Aryan, his background, and interests.',
-    link: '/',
-    type: 'about',
-  },
-  {
-    title: 'Now',
-    description: 'Main focus: 🥊 main focus... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    link: '/',
-    type: 'about',
-  },
   // Add more items as needed
 ];
 
