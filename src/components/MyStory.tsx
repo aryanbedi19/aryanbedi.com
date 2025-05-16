@@ -55,7 +55,7 @@ const MyStorySection = () => {
         </ChakraLink>
         , a tool that helped construction teams automate quoting and estimating. We{" "}
         <ChakraLink href="https://entrepreneurship.uwo.ca/news/2025/04/Accelerator-Profile-Aryan-Bedi-of-Blanc-AI/" isExternal color="#9F7AEA" fontWeight="bold">
-          placed in Western’s Accelerator
+          placed 2nd in Western's Accelerator Pitch Competition
         </ChakraLink>
         , joined the{" "}
         <ChakraLink href="https://www.fellowship.rippleventures.com/" isExternal color="#9F7AEA" fontWeight="bold">
@@ -68,12 +68,15 @@ const MyStorySection = () => {
         Right now, I'm working on my real estate license, building some side projects, and getting back into basketball after some health setbacks.
       </Text>
 
+      {/*
       <Text fontSize="md" mb={4}>
         I wrote a short reflection on the Blanc AI journey —{" "}
         <ChakraLink href="https://www.blancai.ca" isExternal color="#9F7AEA" fontWeight="bold">
           check it out here.
         </ChakraLink>
       </Text>
+      */}
+
       </Box>
     </Box>
   );
